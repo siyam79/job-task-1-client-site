@@ -5,6 +5,8 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Home/Login/Login";
 import Register from "../Components/Register/Register";
 import Dashboard from "../Dashboard/Dashboard";
+import MyProfile from "../Dashboard/DashRoute/MyProfile/MyProfile";
+import Task from "../Dashboard/DashRoute/Task/Task";
 
 
 const Route = createBrowserRouter([
@@ -33,11 +35,14 @@ const Route = createBrowserRouter([
         path: 'dashboard',
         element:<Dashboard></Dashboard>,
         children: [
-            
-            // {
-            //     path: 'allTrainers',
-            //     element: <AdminRoute><AllTrainers></AllTrainers></AdminRoute>
-            // },
+            {
+                path: 'myprofile',
+                element: <MyProfile></MyProfile>
+            },
+            {
+                path: 'task',
+                element:<Task></Task>
+            },
             // {
             //     path: 'balance',
             //     element: <AdminRoute><Balance></Balance></AdminRoute>

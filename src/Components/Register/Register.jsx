@@ -8,7 +8,6 @@ import { useState } from "react";
 import useAuth from '../../Hooks/useAuth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
-
 const Register = () => {
     // const axiosPublic = useAxiosPublic()
     const { createUser, handleUpdateProfile } = useAuth()
@@ -43,15 +42,13 @@ const Register = () => {
                 console.log(res);
                 toast.success('create account')
                 handleUpdateProfile(name, img)
-                .then(() => {
-                    toast.success('User created successfully', {
-                        position: 'top-center'
+                    .then(() => {
+                        toast.success('User created successfully', {
+                            position: 'top-center'
+                        })
+                        navigate('/')
 
                     })
-                    // window.location.reload()
-                    navigate('/')
-
-                })
 
             })
             .catch(error => {
@@ -61,35 +58,45 @@ const Register = () => {
 
         // }
     }
- 
+
     return (
-        <div className=" relative md:w-[28rem]  mx-auto p-2  rounded-lg shadow-2xl mt-1 h-full  ">
+        <div className=" relative md:w-[28rem]  mx-auto p-2  rounded-lg shadow-2xl my-4 h-full  ">
             <h1 className="text-3xl text-center text-pink-600 font-bold  mt-4 "> Register Now  </h1>
             <form onSubmit={handleRegister}>
-                <div className="mb-4 mt-10 ">
-                    <label className="block  text-md font-semibold mb-2 " htmlFor=""> Your Name </label>
-                    <input className=" w-full px-4 py-2 text-white border rounded-lg bg-gray-800 focus:outline-none focus:border-blue-500 " type="text" placeholder="Your Name" name="name" required />
+                <div className="form-control">
+                    <label className="label">
+                        <span className="block text-md font-semibold mb-2"> Your Name </span>
+                    </label>
+                    <input type="name" name="email" placeholder="Enter Your Name" className="input input-bordered" required />
                 </div>
-                <div className="mb-4  ">
-                    <label className="block  text-md font-semibold mb-2 " htmlFor=""> Your Email </label>
-                    <input className=" w-full px-4 py-2 text-white border rounded-lg bg-gray-800 focus:outline-none focus:border-blue-500 " type="text" placeholder="Your Email" name="email" required />
+                <div className="form-control">
+                    <label className="label">
+                        <span className="block text-md font-semibold mb-2">Your E-Mail </span>
+                    </label>
+                    <input type="email" name="email" placeholder="Enter Your E-Mail" className="input input-bordered" required />
                 </div>
 
+                <div className="form-control">
+                    <label className="label">
+                        <span className="block  text-md font-semibold mb-2"> Photo URL </span>
+                    </label>
+                    <input type="name" name="img" placeholder="Your Img Url" className="input input-bordered" required />
+                </div>
 
-                <div className="mb-4 ">
+                {/* <div className="mb-4 ">
                     <label className="block   text-md font-semibold mb-2 " htmlFor=""> Photo URL </label>
                     <input className=" w-full px-4 py-2 text-white border rounded-lg bg-gray-800 focus:outline-none focus:border-blue-500 " type="text" placeholder="Your Img Url" name="img" required />
-                </div>
-                <div className="mb-4 ">
+                </div> */}
+
+                <div className="form-control ">
                     <label className="block  text-md font-semibold mb-2 " htmlFor=""> Password </label>
-                    <input className=" w-full px-4 py-2 text-white border rounded-lg bg-gray-800 focus:outline-none focus:border-blue-500 "
+                    <input className="input input-bordered"
                         type={showPassword ? "text" : "password"}
                         placeholder="Password" name="password" required />
-                    <span onClick={() => setShowPassWord(!showPassword)} className="absolute left-96 mt-3  text-green-700 ">
+                    <span onClick={() => setShowPassWord(!showPassword)} className="absolute md:left-96 left-[340px] mt-[50px] text-green-700 ">
                         {
-                            showPassword ? <AiFillEye className='text-xl text-white'></AiFillEye> : <AiFillEyeInvisible className='text-xl text-white '></AiFillEyeInvisible>
+                            showPassword ? <AiFillEye className='text-xl'></AiFillEye> : <AiFillEyeInvisible className='text-xl '></AiFillEyeInvisible>
                         }
-
                     </span>
                 </div>
                 <label className="label ">
@@ -97,7 +104,7 @@ const Register = () => {
                 </label>
 
                 <div className=" w-32 py-1.5 rounded-md justify-center mx-auto text-center bg-fuchsia-600 hover:bg-fuchsia-800 ">
-                    <button type="submit" className=" w-28 font-bold "> Register Now  </button>
+                    <button type="submit" className=" w-28 font-bold "> Register Now</button>
                 </div>
                 <div className=' flex justify-between items-center  mt-6 px-6 '>
                     <label className="label">

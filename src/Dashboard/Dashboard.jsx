@@ -1,9 +1,10 @@
 import { FaAngleDoubleRight } from "react-icons/fa";
 // import {  useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
-
+import img from '../../public/img/istockphoto-2.jpg'
+import { MdOutlineAddCard } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
-// import { VscChecklist } from "react-icons/vsc";
+import { IoHomeOutline   } from "react-icons/io5";
 // import { BsJournalCheck } from "react-icons/bs";
 // import { RiTeamLine } from "react-icons/ri";
 // import { PiTestTubeThin } from "react-icons/pi";
@@ -30,16 +31,16 @@ const Dashboard = () => {
     return (
         <section className="lg:container mx-auto">
             <div className="navbar py-3 md:py-4 lg:py-6 relative bg-white max-w-[1920px] mx-auto">
-                
+
                 <div className="navbar-start gap-3">
                     <label htmlFor="my-drawer-2" className="btn btn-ghost lg:hidden text-3xl "><FaAngleDoubleRight /></label>
                     <Link to='/'>
-                    <h1 className="text-sm lg:block hidden md:text-base lg:text-lg xl:text-xl flex items-center justify-center gap-2 font-bold inter">
-                        {/* <img className=" h-8" src="https://i.ibb.co/FXwN0tk/bright-luminous-pink-medical-digital-medical-neon-sign-pharmacy-hospital-store-beautiful-shiny-with.png" alt="" /> */}
-                        SCC Technovision Inc</h1>
+                        <h1 className="text-sm lg:block hidden md:text-base lg:text-lg xl:text-xl flex items-center justify-center gap-2 font-bold inter">
+                            {/* <img className=" h-8" src="https://i.ibb.co/FXwN0tk/bright-luminous-pink-medical-digital-medical-neon-sign-pharmacy-hospital-store-beautiful-shiny-with.png" alt="" /> */}
+                            SCC Technovision Inc</h1>
                     </Link>
                 </div>
-                
+
                 <div className="navbar-end">
                     {
                         user ? <>
@@ -53,14 +54,14 @@ const Dashboard = () => {
                                     <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm  rounded"> {user.displayName}</li>
                                     <li className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm  rounded">
                                         <Link className="justify-between">
-                                        {user.email}
-                                            
+                                            {user.email}
+
                                         </Link>
                                     </li>
                                     <li onClick={() => logOut().then(res => toast.success('Log Out Successful !! '))} className="bg-transparent py-2 md:py-2 md:px-2 font-bold text-xs md:text-sm lg:text-xl  btn-ghost rounded text-red-600  "><Link>Logout</Link></li>
                                 </ul>
                             </div>
-                        
+
                         </> : <>
                             <Link to='/login'>
                                 <button className="bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD]  py-2 md:py-3 px-3 md:px-6 lg:px-9 text-white font-bold text-xs md:text-sm  rounded">LOGIN</button>
@@ -80,9 +81,22 @@ const Dashboard = () => {
                     <nav className="p-4 w-80 min-h-full bg-base-200 roboto space-y-8">
                         <div className="text-center space-y-6 mt-6">
                             <h1 className="text-2xl font-bold px-2 "> SCC Technovision Inc </h1>
-                            <div className="w-24 h-24 mx-auto">
-                                <img className="w-full h-full rounded-full" src={user?.photoURL} alt="Profile" />
+                            <div className="mb-4">
+                                {user?.photoURL ? (
+                                    <img
+                                        src={user?.photoURL}
+                                        alt="Profile"
+                                        className="h-32 rounded-full mx-auto"
+                                    />
+                                ) : (
+                                    <img
+                                        src={img}
+                                        alt="Placeholder"
+                                        className="h-32 rounded-full bg-gray-300 mx-auto"
+                                    />
+                                )}
                             </div>
+
                             <div>
                                 <h1 className="text-xl roboto font-bold">{user?.displayName}</h1>
                             </div>
@@ -90,7 +104,20 @@ const Dashboard = () => {
                         {/* Sidebar content here */}
 
 
-                        <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5 font-bold text-xs md:text-sm  rounded flex items-center gap-3`} to="/dashboard/profile" ><VscAccount className="text-xl"></VscAccount> MY PROFILE</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 lg:text-[16px]  md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5 font-bold text-xs md:text-sm  rounded flex items-center gap-3`} to="/dashboard/myprofile" ><VscAccount className="text-xl"></VscAccount> MY PROFILE</NavLink>
+
+                        <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 lg:text-[16px]  md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5  font-bold text-xs md:text-sm   rounded flex items-center gap-3`} to="/dashboard/task" >< MdOutlineAddCard className=" text-xl " /> TASK  </NavLink>
+
+                        <div className="divider"></div>
+                       
+                            <div className="">
+                            <NavLink to="/" className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 md:px-5 text-white font-bold text-xs md:text-sm lg:text-[16px] rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5 font-bold text-xs md:text-sm  rounded flex items-center lg:text-[20px]  gap-3`} ><IoHomeOutline className="text-xl " />
+                                Home</NavLink>
+
+                            </div>
+                        
+
+
 
 
 
