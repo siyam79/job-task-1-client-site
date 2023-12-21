@@ -4,7 +4,7 @@ import Error from "../Pages/Error/Error";
 import Home from "../Components/Home/Home";
 import Login from "../Components/Home/Login/Login";
 import Register from "../Components/Register/Register";
-// import Dashboard from "../Dashboard/Dashboard";
+import Dashboard from "../Dashboard/Dashboard";
 
 
 const Route = createBrowserRouter([
@@ -29,10 +29,10 @@ const Route = createBrowserRouter([
       
 
     },
-    // {
-    //     path: 'dashboard',
-    //     element:<Dashboard></Dashboard>,
-    //     children: [
+    {
+        path: 'dashboard',
+        element:<Dashboard></Dashboard>,
+        children: [
             
             // {
             //     path: 'allTrainers',
@@ -87,8 +87,8 @@ const Route = createBrowserRouter([
             //     path: 'recoment',
             //     element:<RecomentClass></RecomentClass>
             // },
-    //     ]
-    // },
+        ]
+    },
 ])
 
 export default Route;
