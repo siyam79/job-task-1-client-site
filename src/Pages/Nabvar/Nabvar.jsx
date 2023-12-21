@@ -40,6 +40,11 @@ const Nabvar = () => {
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "" : ""}> Dashboard </NavLink></li>
 
+        <li className="mx-2 font-medium"><NavLink
+            to="/register"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "" : ""}> Register </NavLink></li>
+
         
 
         {/* {user && (
