@@ -30,6 +30,16 @@ const Nabvar = () => {
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "" : ""}>Gallery</NavLink></li>
 
+        <li className="mx-2 font-medium"><NavLink
+            to="/gallery"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "" : ""}>Gallery</NavLink></li>
+
+        <li className="mx-2 font-medium"><NavLink
+            to="/dashboard"
+            className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "" : ""}> Dashboard </NavLink></li>
+
         
 
         {/* {user && (
@@ -54,35 +64,7 @@ useEffect(() => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {navBar}
-                            {/* <li className="mx-2 font-medium"><NavLink
-                                to="/"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : ""}>Home</NavLink></li>
-
-                            <li className="mx-2 font-medium"><NavLink
-                                to="/gallery"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "" : ""}>Gallery</NavLink></li>
-
-                            <li className="mx-2 font-medium"><NavLink
-                                to="/trainer"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : ""}>Trainer</NavLink></li>
-
-                            <li className="mx-2 font-medium"><NavLink
-                                to="/classes"
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : ""}>Classes</NavLink></li>
-
-                            <li className="mx-2 font-medium"><NavLink
-                                to="/community."
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : ""}> Community</NavLink></li>
-
-                            <li className="mx-2 font-medium"><NavLink
-                                to="/dashboard."
-                                className={({ isActive, isPending }) =>
-                                    isPending ? "pending" : isActive ? "active" : ""}> Dashboard.</NavLink></li> */}
+                         
 
                         </ul >
                     </div >
@@ -98,49 +80,7 @@ useEffect(() => {
                     <ul className="menu menu-horizontal px-1">
 
                         {navBar}
-                        {/* <li className="mx-2 font-medium"><NavLink
-                            to="/"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Home</NavLink></li>
-                        <li className="mx-2 font-medium"><NavLink
-                            to="/gallery"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Gallery</NavLink></li> */}
-                        {/* {user && (
-                            <li className="mx-2 font-medium">
-                                <NavLink
-                                    to="/myPostedJobs"
-                                    className={({ isActive, isPending }) =>
-                                        isPending ? "pending" : isActive ? "active" : ""
-                                    }
-                                >
-                                    My Posted Jobs
-                                </NavLink>
-                            </li>
-                        )} */}
-                        {/* <li className="mx-2 font-medium"><NavLink
-                            to="/trainer"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Trainer</NavLink></li>
-                        <li className="mx-2 font-medium"><NavLink
-                            to="/classes"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Classes</NavLink></li>
-
-                        <li className="mx-2 font-medium"><NavLink
-                            to="/community"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Community</NavLink></li>
-
-                        <li className="mx-2 font-medium"><NavLink
-                            to="/dashboard"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Dashboard</NavLink></li> */}
-
-                        {/* <li className="mx-2 font-medium"><NavLink
-                            to="/register"
-                            className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "active" : ""}>Register</NavLink></li> */}
+                  
                     </ul>
                 </div>
                 <div className="navbar-end">
