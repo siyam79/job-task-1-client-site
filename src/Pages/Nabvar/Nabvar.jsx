@@ -1,5 +1,5 @@
 
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 
@@ -35,17 +35,14 @@ const Nabvar = () => {
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "" : ""}>Gallery</NavLink></li>
 
-        <li className="mx-2 font-medium"><NavLink
-            to="/dashboard"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "" : ""}> Dashboard </NavLink></li>
 
-        <li className="mx-2 font-medium"><NavLink
-            to="/register"
-            className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "" : ""}> Register </NavLink></li>
+        {user && (
+            <li className="mx-2 font-medium"><NavLink
+                to="/dashboard/myprofile/"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""}> Dashboard.</NavLink></li>
+        )}
 
-        
 
         {/* {user && (
             <li className="mx-2 font-medium"><NavLink
@@ -55,9 +52,9 @@ const Nabvar = () => {
         )} */}
 
     </>
-useEffect(() => {
-    document.title = " Job-Task | Navbar";
-}, []);
+    useEffect(() => {
+        document.title = " Job-Task | Navbar";
+    }, []);
 
     return (
         <div>
@@ -69,7 +66,7 @@ useEffect(() => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             {navBar}
-                         
+
 
                         </ul >
                     </div >
@@ -85,7 +82,7 @@ useEffect(() => {
                     <ul className="menu menu-horizontal px-1">
 
                         {navBar}
-                  
+
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -125,10 +122,10 @@ useEffect(() => {
                         <NavLink
                             to="/login"
                             className={({ isActive }) =>
-                                isActive ? 'btn btn-neutral btn-sm ' : ''
+                                isActive ? '  lg:hidden md:hidden hidden' : '' 
                             }
                         >
-                            Login
+                           
                         </NavLink>
                     )}
                 </div>

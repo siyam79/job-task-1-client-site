@@ -1,7 +1,7 @@
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+// import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../../Hooks/useAuth";
@@ -13,7 +13,7 @@ import SocialLogin from "../../SocialLogin/SocialLogin";
 const Login = () => {
 
     const { signin } = useAuth();
-    const [showPassword, setShowPassWord] = useState(false)
+    // const [showPassword, setShowPassWord] = useState(false)
     const navigate = useNavigate()
     const location = useLocation();
     console.log(location);
@@ -80,13 +80,9 @@ const Login = () => {
                             <div className="form-control w-full ">
                                 <label className="block  text-md font-semibold mb-2 " htmlFor="">Password </label>
                                 <input className="input input-bordered"
-                                    type={showPassword ? "text" : "password"}
+                                    type= "password"
                                     placeholder="Password" name="password" required />
-                                {/* <span onClick={() => setShowPassWord(!showPassword)} className="absolute lg:right-[200px] md:right-[700px] left-[280px] mt-[47px] text-green-700 ">
-                                    {
-                                        showPassword ? <AiFillEye className='text-xl'></AiFillEye> : <AiFillEyeInvisible className='text-xl '></AiFillEyeInvisible>
-                                    }
-                                </span> */}
+                               
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

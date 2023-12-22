@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Banner = () => {
+    const { user,  } = useAuth()
     return (
         <div>
 
@@ -12,7 +15,14 @@ const Banner = () => {
                         <h1 className="text-xl md:text-2xl lg:text-3xl  font-bold leading-snug px-4 ">Welcome to SCC Technovision Inc.</h1>
                         <p className="leading-loose font-medium px-4 ">Welcome to SCC Technovision Inc.! Elevate your productivity with our Task Management Platform. Effortlessly create, track, and complete tasks. Collaborate seamlessly with your team, utilizing features like detailed task information, priority levels, and intuitive workflows.</p>
                         <div className=" px-4 ">
-                            <button className="py-2 px-3 md:py-3 md:px-5 lg:py-4 lg:px-6 text-xs md:text-sm lg:text-base bg-gradient-to-l from-[#924AEF] to-[#A827E4] font-bold rounded-md ">Let's Explore</button>
+                            {
+                                user?.email?  <Link to='/dashboard/myprofile'> 
+                                <button className="py-2 px-3 md:py-3 md:px-5 lg:py-4 lg:px-6 text-xs md:text-sm lg:text-base bg-gradient-to-l from-[#924AEF] to-[#A827E4] font-bold rounded-md ">Let's Explore</button>
+                                </Link>: <Link to='/login'> 
+                                <button className="py-2 px-3 md:py-3 md:px-5 lg:py-4 lg:px-6 text-xs md:text-sm lg:text-base bg-gradient-to-l from-[#924AEF] to-[#A827E4] font-bold rounded-md ">Let's Explore</button>
+                                </Link>
+                            }
+                          
                         </div>
                     </div>
                 </div>

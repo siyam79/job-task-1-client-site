@@ -67,7 +67,7 @@ const Register = () => {
                     <label className="label">
                         <span className="block text-md font-semibold mb-2"> Your Name </span>
                     </label>
-                    <input type="name" name="email" placeholder="Enter Your Name" className="input input-bordered" required />
+                    <input type="name" name="name" placeholder="Enter Your Name" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -103,9 +103,12 @@ const Register = () => {
                     <a href="#" className="label-text-alt link link-hover text-base ">Forgot password?</a>
                 </label>
 
-                <div className=" w-32 py-1.5 rounded-md justify-center mx-auto text-center bg-fuchsia-600 hover:bg-fuchsia-800 ">
-                    <button type="submit" className=" w-28 font-bold "> Register Now</button>
+                <div className="form-control mt-6">
+                    <button className="bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] py-2 md:py-3 px-3 md:px-6 lg:px-9 text-white font-bold text-xs md:text-sm  rounded">Register Now</button>
                 </div>
+                {/* <div className=" w-32 py-1.5 rounded-md justify-center mx-auto text-center bg-fuchsia-600 hover:bg-fuchsia-800 ">
+                    <button type="submit" className=" w-28 font-bold "> Register Now</button>
+                </div> */}
                 <div className=' flex justify-between items-center  mt-6 px-6 '>
                     <label className="label">
                         <h1 className="label-text-alt link link-hover text-[16px] text-pink-600 ">Please Your  </h1>

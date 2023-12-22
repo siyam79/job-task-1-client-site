@@ -2,7 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword,
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { auth } from "../Config/firebase.config";
-import useAxiosPublic from "../Hooks/useAxiosPublic";
+// import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 export const AuthContext = createContext(null)
 
@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
-    const axiosPublic = useAxiosPublic()
+    // const axiosPublic = useAxiosPublic()
 
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
@@ -65,22 +65,22 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubcribe = onAuthStateChanged(auth, (user) => {
             setUser(user);
-            if (user) {
-                // TODO 
-                const userInfo = { email: user.email }
-                axiosPublic.post('/jwt', userInfo)
-                .then(res=>{
-                   if (res.data.token) {
-                    localStorage.setItem('access-token', res.data.token)
-                    setLoading(false)
-                   }
-                })
-            }
-            else {
-                // TODO 
-                localStorage.removeItem('access-token')
-                setLoading(false)
-            }
+            // if (user) {
+            //     // TODO 
+            //     const userInfo = { email: user.email }
+            //     axiosPublic.post('/jwt', userInfo)
+            //     .then(res=>{
+            //        if (res.data.token) {
+            //         localStorage.setItem('access-token', res.data.token)
+            //         setLoading(false)
+            //        }
+            //     })
+            // }
+            // else {
+            //     // TODO 
+            //     localStorage.removeItem('access-token')
+            //     setLoading(false)
+            // }
             
 
         });
@@ -88,7 +88,7 @@ const AuthProvider = ({ children }) => {
             unSubcribe()
 
         }
-    }, [axiosPublic]);
+    }, []);
 
     // console.log(user);
 

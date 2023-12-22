@@ -7,6 +7,8 @@ import Register from "../Components/Register/Register";
 import Dashboard from "../Dashboard/Dashboard";
 import MyProfile from "../Dashboard/DashRoute/MyProfile/MyProfile";
 import Task from "../Dashboard/DashRoute/Task/Task";
+import AllTask from "../Dashboard/DashRoute/AllTask/AllTask";
+import UpdateTask from "../Components/UpdateTask/UpdateTask";
 
 
 const Route = createBrowserRouter([
@@ -27,6 +29,10 @@ const Route = createBrowserRouter([
                 path:'/register',
                 element:<Register></Register>
             },
+            // {
+            //     path: '/updateTask/:id',
+            //     element:<UpdateTask></UpdateTask>
+            // },
         ],
       
 
@@ -42,6 +48,15 @@ const Route = createBrowserRouter([
             {
                 path: 'task',
                 element:<Task></Task>
+            },
+            {
+                path: 'alltask',
+                element:<AllTask></AllTask>
+            },
+            {
+                path: 'updateTask/:id',
+                element:<UpdateTask></UpdateTask>,
+                loader: ({params}) => fetch(`http://localhost:5000/updateJobTask/${params.id}`)
             },
             // {
             //     path: 'balance',

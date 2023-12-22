@@ -106,7 +106,9 @@ const Dashboard = () => {
 
                         <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 lg:text-[16px]  md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5 font-bold text-xs md:text-sm  rounded flex items-center gap-3`} to="/dashboard/myprofile" ><VscAccount className="text-xl"></VscAccount> MY PROFILE</NavLink>
 
-                        <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 lg:text-[16px]  md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5  font-bold text-xs md:text-sm   rounded flex items-center gap-3`} to="/dashboard/task" >< MdOutlineAddCard className=" text-xl " /> TASK  </NavLink>
+                        <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 lg:text-[16px]  md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5 font-bold text-xs md:text-sm  rounded flex items-center gap-3`} to="/dashboard/alltask" ><VscAccount className="text-xl"></VscAccount>All Task </NavLink>
+
+                        <NavLink className={({ isActive }) => isActive ? `bg-gradient-to-l from-[#8D53FD] to-[#9E6EFD] md:py-3.5 lg:text-[16px]  md:px-5 text-white font-bold text-xs md:text-sm  rounded flex items-center gap-3` : `bg-transparent md:py-3.5 md:px-5  font-bold text-xs md:text-sm   rounded flex items-center gap-3`} to="/dashboard/task" >< MdOutlineAddCard className=" text-xl " />Add TASK  </NavLink>
 
                         <div className="divider"></div>
                        

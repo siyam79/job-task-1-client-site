@@ -8,7 +8,6 @@ import { useEffect } from 'react';
 import useAuth from '../../Hooks/useAuth';
 
 
-
 const SocialLogin = () => {
 
     const { googleLogin , githubLogin} = useAuth()
@@ -30,7 +29,6 @@ const SocialLogin = () => {
                     }, 1000);
                 }
 
-
             }).catch(error => {
                 toast.error(error);
             })
@@ -47,7 +45,7 @@ const SocialLogin = () => {
                     className=" badge badge-outline w-full px-4 py-4 mt-2 pb-4  flex items-center justify-center font-bold gap-1"><span className=" text-xl"><FcGoogle></FcGoogle></span ><span className='text-fuchsia-600 font-semibold '>Login With Google</span> </button>
                 <button
                     onClick={() => {handleSocialLogin(githubLogin)}}
-                    className="badge badge-outline w-full px-4 py-4 mt-2 pb-4  flex items-center justify-center font-bold gap-1 "><span className="text-xl "> <BsGithub></BsGithub> </span ><span className='text-fuchsia-600  font-semibold '>Login With Github</span></button>
+                    className="badge badge-outline w-full px-4 py-4 mt-2 pb-4 mb-4  flex items-center justify-center font-bold gap-1 "><span className="text-xl "> <BsGithub></BsGithub> </span ><span className='text-fuchsia-600  font-semibold '>Login With Github</span></button>
             </div>
             <ToastContainer></ToastContainer>
         </>
