@@ -9,6 +9,9 @@ import MyProfile from "../Dashboard/DashRoute/MyProfile/MyProfile";
 import Task from "../Dashboard/DashRoute/Task/Task";
 import AllTask from "../Dashboard/DashRoute/AllTask/AllTask";
 import UpdateTask from "../Components/UpdateTask/UpdateTask";
+import PrivateRoute from "../AuthProvider/PrivateRoute";
+import About from "../Components/About/About";
+import Piccing from "../Components/Piccing/Piccing";
 
 
 const Route = createBrowserRouter([
@@ -20,6 +23,14 @@ const Route = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path: 'about',
+                element:<About></About>
+            },
+            {
+                path: 'piccing',
+                element:<Piccing></Piccing>
             },
             {
                 path:'/login',
@@ -49,9 +60,10 @@ const Route = createBrowserRouter([
                 path: 'task',
                 element:<Task></Task>
             },
+           
             {
                 path: 'alltask',
-                element:<AllTask></AllTask>
+                element:<PrivateRoute><AllTask></AllTask></PrivateRoute>
             },
             {
                 path: 'updateTask/:id',

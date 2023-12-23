@@ -1,6 +1,6 @@
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,7 +54,7 @@ const Login = () => {
 
     }
     useEffect(() => {
-        document.title = " Fitness-Tracker | Login ";
+        document.title = " Job-Task | Login ";
     }, []);
 
     return (

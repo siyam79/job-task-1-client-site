@@ -21,7 +21,7 @@ const navigate = useNavigate()
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify({ ...data, status: "todo" }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -112,7 +112,7 @@ const navigate = useNavigate()
                                         />
                                         {errors.priority && <span className="text-red-600">Priority is required</span>}
                                     </div>
-                                    <div className="w-1/2">
+                                    {/* <div className="w-1/2">
                                         <label className="label">
                                             <span className="text-lg text-black duration-300">
                                                 Status
@@ -136,7 +136,7 @@ const navigate = useNavigate()
                                         {errors.status && (
                                             <span className="text-red-600">Status is required</span>
                                         )}
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 <div className="flex items-center justify-between w-full gap-4">

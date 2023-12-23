@@ -6,13 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 // import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import useAuth from '../../Hooks/useAuth';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 
 const SocialLogin = () => {
 
     const { googleLogin , githubLogin} = useAuth()
     const navigate = useNavigate()
-
+    const axiosPublic = useAxiosPublic()
     // const axiosPublic = useAxiosPublic()
 
     const handleSocialLogin = (user) => {
@@ -25,9 +26,21 @@ const SocialLogin = () => {
                         position: 'top-center'
                     })
                     setTimeout(() => {
-                        navigate('/')
+                        
                     }, 1000);
                 }
+
+                const userInfo = {
+                    email: res.user?.email,
+                    name: res.user?.displayName,
+                    
+                }
+
+                axiosPublic.post("/users", userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate('/')
+                    })
 
             }).catch(error => {
                 toast.error(error);

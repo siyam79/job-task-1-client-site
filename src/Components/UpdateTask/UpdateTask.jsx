@@ -1,5 +1,5 @@
 import { useForm, Controller } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 // import { toast } from "react-toastify";
 // import Swal from "sweetalert2";
@@ -7,10 +7,8 @@ const UpdateTask = () => {
 
     const data = useLoaderData()
     console.log(data);
-
-    const {_id, title, deadline, description, priority, status, startDate } = data || {};
-
-
+    const navigate = useNavigate()
+    const { _id, title, deadline, description, priority, status, startDate } = data || {};
 
     const {
         register,
@@ -37,16 +35,17 @@ const UpdateTask = () => {
                     toast.success(" Task Update Success Full ", {
                         position: "top-left"
                     })
+                    navigate('/dashboard/alltask')
                 }
             })
     }
 
     return (
         <div className="flex flex-col items-center justify-center  space-y-5 h-[100svh]">
-            <h1 className="font-bold text-3xl ">Add Task From Here</h1>
-           
+            <h1 className="font-bold text-3xl "> Update Task From Here</h1>
+
             <div className="modal-box rounded-3xl bg-white bg-opacity-90 backdrop-blur-lg">
-                <h3 className="font-bold text-4xl text-center">Add New Task</h3>
+                <h3 className="font-bold text-4xl text-center">Update Task </h3>
                 <div className="modal-action">
                     <form
                         method="dialog"
@@ -182,9 +181,9 @@ const UpdateTask = () => {
 
                             <button
                                 type="submit"
-                                className="px-9 py-4 text-lg text-slate-800 outline outline-2 outline-gray-700 rounded-full hover:bg-[#F49C4D] hover:outline-0 hover:text-white"
+                                className="px-9 mb-16  py-2 text-lg text-slate-800 outline outline-2 outline-gray-700 rounded-full hover:bg-[#F49C4D] hover:outline-0 hover:text-white"
                             >
-                                Add Task
+                               Update Task
                             </button>
                             {/* <div className="flex items-center justify-between">
                                 <button
