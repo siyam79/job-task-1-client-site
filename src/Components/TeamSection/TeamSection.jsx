@@ -1,3 +1,7 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 const cardsData = [
     {
         title: 'Developers and Tech Enthusiasts',
@@ -38,21 +42,34 @@ const cardsData = [
 ];
 
 const Card = ({ title, description }) => (
-    <div className=" w-full rounded-2xl overflow-hidden shadow mx-auto bg-orange-100 bg-opacity-20">
+    <div className=" w-full rounded-2xl overflow-hidden shadow mx-auto bg-gray-300  bg-opacity-20 " data-aos="flip-left">
         <div className="px-6 py-4">
-            <div className="font-semibold text-xl mb-2 leading-[2.75rem]">{title}</div>
+            <div className="font-mono text-xl mb-2 leading-[2.75rem]">{title}</div>
             <p className="text-gray-700 text-base leading-7">{description}</p>
-        </div>
+            <div>
+            <button className="py-0 mt-4 px-3 md:py-3 md:px-5 lg:py-2 lg:px-6 text-xs md:text-sm lg:text-base bg-gradient-to-l from-[#924AEF] to-[#A827E4] font-bold rounded-md "> Details </button>
+            </div>
+        </div> 
     </div>
 );
 
 const TeamSection = () => {
+
+
+
+
+    useEffect(() => {
+        AOS.init({ duration: 3000 })
+    }, [])
+
+
+
     return (
         <div className="min-h-screen p-8 font-poppins max-w-[1400px] mx-auto">
             <div className="grid-lines"></div>
             <div>
                 <h1 className="text-3xl font-medium mb-8 text-center">Discover Who Benefits Most</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5" >
                     {cardsData.map((card, index) => (
                         <Card key={index} {...card} />
                     ))}

@@ -21,7 +21,7 @@ const UpdateTask = () => {
         e.target.reset()
 
 
-        fetch(`http://localhost:5000/updateJobTasks/${_id}`, {
+        fetch(`https://job-task-server-site-livid.vercel.app/updateJobTasks/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

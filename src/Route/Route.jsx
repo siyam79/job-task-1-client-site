@@ -68,7 +68,7 @@ const Route = createBrowserRouter([
             {
                 path: 'updateTask/:id',
                 element:<UpdateTask></UpdateTask>,
-                loader: ({params}) => fetch(`http://localhost:5000/updateJobTask/${params.id}`)
+                loader: ({params}) => fetch(`https://job-task-server-site-livid.vercel.app/updateJobTask/${params.id}`)
             },
             // {
             //     path: 'balance',

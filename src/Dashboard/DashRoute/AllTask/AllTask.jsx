@@ -33,7 +33,7 @@
 //             confirmButtonText: "Yes, delete it!",
 //         }).then((result) => {
 //             if (result.isConfirmed) {
-//                 fetch(`http://localhost:5000/deleteTask/${_id}`, {
+//                 fetch(`https://job-task-server-site-livid.vercel.app/deleteTask/${_id}`, {
 //                     method: "DELETE",
 //                 })
 //                     .then((res) => res.json())
@@ -138,8 +138,8 @@ const AllTask = () => {
     const [completedTasks, setCompletedTasks] = useState([]);
 
     const fetchJobs = () => {
-        fetch(`http://localhost:5000/getAllTask?email=${user?.email}`)
-        // fetch(http://localhost:5000/)
+        fetch(`https://job-task-server-site-livid.vercel.app/getAllTask?email=${user?.email}`)
+        // fetch(https://job-task-server-site-livid.vercel.app/)
             .then((res) => res.json())
             .then((data) => {
                 setPostedJobs(data);
@@ -178,7 +178,7 @@ const AllTask = () => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteTask/${_id}`, {
+                fetch(`https://job-task-server-site-livid.vercel.app/deleteTask/${_id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -202,7 +202,7 @@ const AllTask = () => {
         const taskId = e.dataTransfer.getData("text/plain");
 
         try {
-            const response = await fetch(`http://localhost:5000/alltask/${taskId}`, {
+            const response = await fetch(`https://job-task-server-site-livid.vercel.app/alltask/${taskId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

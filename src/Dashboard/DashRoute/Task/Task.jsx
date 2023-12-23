@@ -16,7 +16,7 @@ const navigate = useNavigate()
     const onSubmit = (data, e) => {
         console.log(data);
         e.target.reset()
-        fetch("http://localhost:5000/createTask", {
+        fetch("https://job-task-server-site-livid.vercel.app/createTask", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
